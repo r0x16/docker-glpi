@@ -1,6 +1,7 @@
 FROM php:8.3-apache
 
-RUN apt update
+RUN apt update && \
+    apt install cron
 
 RUN mkdir -p /var/www/glpi/public
 COPY 999-glpi.conf /etc/apache2/sites-available/999-glpi.conf
